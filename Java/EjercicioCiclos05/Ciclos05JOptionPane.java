@@ -4,8 +4,6 @@ numero aleatorio entre 0-100, y luego ir pidiendo numeros indicando "es mayor" o
 "es menor" segun sea mayor o menor con respecto a N. El proceso termina cuando
 el usuario acierta y mostramos el numero de intentos hechos.
  */
-package Ciclos05;
-
 import javax.swing.JOptionPane;
 
 public class Ciclos05JOptionPane {
