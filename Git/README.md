@@ -431,6 +431,33 @@ Se le puede especificar un archivo con `git restore <nombre_archivo>` o directam
 
 <!--DEFINICION-->
 
+<span style="font-size:15px;"><b>`git push`</b>:</span>&ensp;Se usa para subir los cambios locales al repositorio remoto vinculado. Para el primer push se debe indicar la rama usando `git push -u origin <rama>` (`-u` es upstream, origin lo estableces con `git remote`).
+
+<!--OPCIONES-->
+
+<div style="margin-top: -10px;">
+<details>
+<summary>&emsp;Opciones</summary>
+<span>
+
+- <span style="font-size:15px;"><b>`--all`</b></span>:&ensp;Sube todos los cambios de todas las ramas, no solo de la que estas parado
+- <span style="font-size:15px;"><b>`--tags`</b></span>:&ensp;Le indicas al push que incluya TODAS las tags locales que no estén en el servidor, OJO no se puede combinar con `--all` en la misma linea, deben hacerse dos push por separado
+- <span style="font-size:15px;"><b>`-f`</b> o <b>`--force`</b></span>:&ensp;Si el servidor rechaza el push, se lo puede forzar con esta opción. Sobreescribe el remoto con tu local, se puede pisar progreso cuidado
+- <span style="font-size:15px;"><b>`--force-with-lease`</b></span>:&ensp;Preferible antes que `-f`, fuerza tu push al servidor sin borrar los cambios nuevos de otros
+- <span style="font-size:15px;"><b>`origin --delete <rama>`</b></span>:&ensp;Permite eliminar del servidor la rama pasada como argumento
+
+</span>
+</details>
+</div>
+
+<!-- ========================= -->
+
+<div style="margin-top: 35px;"></div>
+
+<!-- ========================= -->
+
+<!--DEFINICION-->
+
 <span style="font-size:15px;"><b>`git tag <version> <hash-del-commit>`</b>:</span>&ensp;Permite crear punteros en el historial de commits (ej. `git tag v1.0 <hash>`).
 
 <!--OPCIONES-->
@@ -688,35 +715,79 @@ Para solucionar esto hay que borrar las marcas (`<=>` y `HEAD`/`NOMBRE-RAMA`) y 
 
 <!--DEFINICION-->
 
-`git push`: &ensp;Se usa para subir los cambios locales al repositorio remoto vinculado. Para el primer push se debe indicar la rama usando `git push -u origin <rama>` (`-u` es upstream, origin lo estableces con `git remote`). Opciones\:
+<span style="font-size:15px;"><b>`git rm <nombre-archivo>`</b>:</span>&ensp;GIT REMOVE — Elimina del área de preparación y también del worktree al archivo pasado como argumento. Opciones\:
 
-- `--all`: &ensp;Sube todos los cambios de todas las ramas, no solo de la que estas parado
-- `--tags`: &ensp;Le indicas al push que incluya TODAS las tags locales que no estén en el servidor, OJO no se puede combinar con `--all` en la misma linea, deben hacerse dos push por separado
-- `-f` o `--force`: &ensp;Si el servidor rechaza el push, se lo puede forzar con esta opción. Sobreescribe el remoto con tu local, se puede pisar progreso cuidado
-- `--force-with-lease`: &ensp;Preferible antes que `-f`, fuerza tu push al servidor sin borrar los cambios nuevos de otros
-- `origin --delete <rama>`: &ensp;Permite eliminar del servidor la rama pasada como argumento
+<!--OPCIONES-->
 
-`code`: &ensp;Abre Visual Studio Code, se le puede indicar qué abrir (ej. `code .` para abrir la carpeta actual, `code archivo.txt` para abrir un archivo en particular)
+<div style="margin-top: -10px;">
+<details>
+<summary>&emsp;Opciones</summary>
+<span>
 
-`git rm <nombre-archivo>`: &ensp;GIT REMOVE — Elimina del área de preparación y también del worktree al archivo pasado como argumento. Opciones\:
+- <span style="font-size:15px;"><b>`--cached <nombre-archivo>`</b></span>:&ensp;borra el archivo (o carpeta si se combina con `-r`) solo del área de preparación y NO de tu computadora, util para sacar archivos o carpetas que añadiste por error y querés agregar a tu .gitignore
+- <span style="font-size:15px;"><b>`-f`</b> o <b>`--force`</b></span>:&ensp;Por defecto git no te deja borrar un archivo que tenga cambios locales sin guardar en un commit, esta opción ignora esos cambios y elimina el archivo de todas formas (tanto del staging como del working directory)
+- <span style="font-size:15px;"><b>`-r <nombre-carpeta/>`</b></span>:&ensp;RECURSIVE — Permite borrar carpetas y todos sus contenidos dentro
 
-- `--cached <nombre-archivo>`: &ensp;borra el archivo (o carpeta si se combina con `-r`) solo del área de preparación y NO de tu computadora, util para sacar archivos o carpetas que añadiste por error y querés agregar a tu .gitignore
-- `-f` o `--force`: &ensp;Por defecto git no te deja borrar un archivo que tenga cambios locales sin guardar en un commit, esta opción ignora esos cambios y elimina el archivo de todas formas (tanto del staging como del working directory)
-- `-r <nombre-carpeta-/>`: &ensp;RECURSIVE — Permite borrar carpetas y todos sus contenidos dentro
+</span>
+</details>
+</div>
 
-<br>
+<!-- ========================= -->
 
-`git show`: &ensp;Por defecto sirve para visualizar detalles (adiciones, modificaciones o eliminaciones en cada archivo que fue modificado) linea por linea del último commit, pero en realidad sirve para ver detalles de cualquier objeto git (por ejemplo una tag anotada usando `git show <version>`)
+<div style="margin-top: 35px;"></div>
 
-`git shortlog`: &ensp;Muestra el nombre del usuario, la cantidad de commits al lado de su nombre y una lista de solo los mensajes de los commits
+<!-- ========================= -->
 
-`git diff`: &ensp;Sirve para ver las diferencias linea por linea entre versiones, de ya sea de commits, archivos o lo que esté en el área de preparación. El comando solo sin argumentos mostrará los cambios locales hechos (lo que no esté stageado). Las lineas rojas indican lo que fue modificado o borrado, mientras que las verdes indican lo que fue agregado. Opciones\:
+## Misceláneos a saber
 
-- `--stat`: &ensp;Muestra de forma resumida los archivo modificados y cuales fueron sus cambios en cada uno
-- `--numstat`: &ensp;Muestra de forma incluso más resumida los cambios de cada archivo que haya sido modificado, mostrando solamente las lineas que fueron agregadas (izquierda) y eliminadas (derecha)
-- `--staged`: &ensp;Muestra los cambios que entrarán en el próximo commit
-- `<nombre_de_otra_rama>`: &ensp;Mostrará las diferencias entre la rama actual y la rama dada, si ingresas el nombre de la rama actual simplemente mostrará los cambios locales hechos (si es que hay)
-- `<nombre-rama-1>..<nombre-rama-2>`: &ensp;muestra qué tiene la rama B que no tenga la rama A
-- `<hash1> <hash2>`: &ensp;compara dos commits
+<!--DEFINICION-->
 
-<br>
+<span style="font-size:15px;"><b>`code`</b>:</span>&ensp;Abre Visual Studio Code, se le puede indicar qué abrir (ej. `code .` para abrir la carpeta actual, `code archivo.txt` para abrir un archivo en particular)
+
+<!-- ========================= -->
+
+<div style="margin-top: 35px;"></div>
+
+<!-- ========================= -->
+
+<!--DEFINICION-->
+
+<span style="font-size:15px;"><b>`git show`</b>:</span>&ensp;Por defecto sirve para visualizar detalles (adiciones, modificaciones o eliminaciones en cada archivo que fue modificado) linea por linea del último commit, pero en realidad sirve para ver detalles de cualquier objeto git (por ejemplo una tag anotada usando `git show <version>`)
+
+<!-- ========================= -->
+
+<div style="margin-top: 35px;"></div>
+
+<!-- ========================= -->
+
+<!--DEFINICION-->
+
+<span style="font-size:15px;"><b>`git shortlog`</b>:</span>&ensp;Muestra el nombre del usuario, la cantidad de commits al lado de su nombre y una lista de solo los mensajes de los commits
+
+<!-- ========================= -->
+
+<div style="margin-top: 35px;"></div>
+
+<!-- ========================= -->
+
+<!--DEFINICION-->
+
+<span style="font-size:15px;"><b>`git diff`</b>:</span>&ensp;Sirve para ver las diferencias linea por linea entre versiones, de ya sea de commits, archivos o lo que esté en el área de preparación. El comando solo sin argumentos mostrará los cambios locales hechos (lo que no esté stageado). Las lineas rojas indican lo que fue modificado o borrado, mientras que las verdes indican lo que fue agregado.
+
+<!--OPCIONES-->
+
+<div style="margin-top: -10px;">
+<details>
+<summary>&emsp;Opciones</summary>
+<span>
+
+- <span style="font-size:15px;"><b>`--stat`</b></span>:&ensp;Muestra de forma resumida los archivo modificados y cuales fueron sus cambios en cada uno
+- <span style="font-size:15px;"><b>`--numstat`</b></span>:&ensp;Muestra de forma incluso más resumida los cambios de cada archivo que haya sido modificado, mostrando solamente las lineas que fueron agregadas (izquierda) y eliminadas (derecha)
+- <span style="font-size:15px;"><b>`--staged`</b></span>:&ensp;Muestra los cambios que entrarán en el próximo commit
+- <span style="font-size:15px;"><b>`<nombre_de_otra_rama>`</b></span>:&ensp;Mostrará las diferencias entre la rama actual y la rama dada, si ingresas el nombre de la rama actual simplemente mostrará los cambios locales hechos (si es que hay)
+- <span style="font-size:15px;"><b>`<nombre-rama-1>..<nombre-rama-2>`</b></span>:&ensp;Muestra qué tiene la rama 2 que no tenga la rama 1
+- <span style="font-size:15px;"><b>`<hash1> <hash2>`</b></span>:&ensp;Compara dos commits
+
+</span>
+</details>
+</div>
