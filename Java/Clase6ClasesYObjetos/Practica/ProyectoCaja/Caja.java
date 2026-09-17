@@ -1,30 +1,33 @@
-/*
-Proyecto Caja:
-Ejercicio 1: Crear un proyecto segun las especificaciones mostradas
-a continuacion.
-La formula es: volumen = ancho * alto * profundidad
-Necesitamos mostrarlo de 2 maneras: un constructor vacio y un constructor con
-argumentos (que reciba los parametros para la formula).
- */
+
+
 public class Caja {
-    // Atributos
-    public double ancho;
-    public double alto;
-    public double profundidad;
+    float ancho;
+    float alto;
+    float profundidad;
     
-    // Constructor vacío
     public Caja() {
+        // constructor vacio
     }
-    
-    // Constructor con argumentos
-    public Caja(double ancho, double alto, double profundidad) {
+
+    public Caja(float ancho, float alto, float profundidad) {
         this.ancho = ancho;
         this.alto = alto;
         this.profundidad = profundidad;
     }
-    
-    // Método para calcular el volumen
-    public double calcularVolumen() {
-        return this.ancho * this.alto * this.profundidad;
+
+    public float getVolumen() {
+        return (this.ancho * this.alto * this.profundidad);
+    }
+
+    public float getAncho() {
+        return this.ancho;
+    }
+
+    public float getAlto() {
+        return this.alto;
+    }
+
+    public float getProfundidad() {
+        return this.profundidad;
     }
 }
