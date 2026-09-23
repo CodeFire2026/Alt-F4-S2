@@ -2,7 +2,7 @@
 Ejercicio 12: Pedir un numero y calcular su factorial.
 Hacerlo con las dos clases, Scanner y JOptionPane
  */
-package ciclos12;
+package Java.Clase7ClasesYObjetos.Practica;
 
 import java.util.Scanner;
 
@@ -20,5 +20,7 @@ public class Ciclos12Scanner {
         }
         
         System.out.println("El factorial de "+numero+" es: "+factorial);
+
+        entrada.close();
     }
 }

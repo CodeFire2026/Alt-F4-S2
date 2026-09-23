@@ -2,7 +2,7 @@
 Ejercicio 11: Diseñar un programa que muestre el producto de los 10 primeros
 numeros impares. Hacerlo con Scanner y JOptionPane
  */
-package ciclos11;
+package Java.Clase7ClasesYObjetos.Practica;
 
 import java.util.Scanner;
 
@@ -46,5 +46,7 @@ public class Ciclos11Scanner {
         
         System.out.println("El producto de los "+cantidad+" numeros impares es: "
         +producto);
+
+        entrada.close();
     }
 }
