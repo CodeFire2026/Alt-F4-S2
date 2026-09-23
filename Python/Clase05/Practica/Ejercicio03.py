@@ -1,4 +1,4 @@
-# Clase 5 Ejercicio 3: crear funcion para sumar valores numericos pasados como *args
+# Ejercicio 3: crear funcion para sumar valores numericos pasados como *args
 # mostrar como resultado la suma de todos los valores
 
 

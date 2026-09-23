@@ -1,4 +1,4 @@
-# Clase 5 Ejercicio 2: Agenda telefonica
+# Ejercicio 2: Agenda telefonica
 # Simular una agenda de contactos. Crear un diccionario donde
 # la clave sea el nombre y el valor el numero de telefono. Menu:
 # 1. Nuevo contacto

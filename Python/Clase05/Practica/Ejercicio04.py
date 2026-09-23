@@ -1,4 +1,4 @@
-# Clase 5 Ejercicio 4: crear funcion para multiplicar valores numericos pasados como *args
+# Ejercicio 4: crear funcion para multiplicar valores numericos pasados como *args
 # mostrar como resultado el producto de todos los valores
 
 

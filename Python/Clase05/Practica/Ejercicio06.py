@@ -1,4 +1,4 @@
-# Clase 5 Ejercicio 6: calculadora de impuestos
+# Ejercicio 6: calculadora de impuestos
 # Crear funcion para calcular el total de un pago sumando impuestos
 # Formula: total = pago + pago * (impuesto/100)
 

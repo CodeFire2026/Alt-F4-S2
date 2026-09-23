@@ -1,4 +1,4 @@
-# Clase 5 Ejercicio 5: funcion recursiva
+# Ejercicio 5: funcion recursiva
 # Imprimir números de forma descendente utilizando recursividad. Ej: pasar 5 devuelve:
 # 5
 # 4
@@ -7,8 +7,10 @@
 # 1
 
 def mostrarNumsDescent(num):
-    if num == 1:
-        print(num)
+    if num < 0:
+        print("Numero invalido")
+        return
+    elif num == 0:
         return
     print(num)
     mostrarNumsDescent(num - 1)

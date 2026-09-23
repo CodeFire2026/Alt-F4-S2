@@ -1,4 +1,4 @@
-# Clase 5 Ejercicio 1: No repetir caracteres
+# Ejercicio 1: No repetir caracteres
 # Pedir una cadena por teclado y meter los caracteres en una lista sin repetidos
 
 

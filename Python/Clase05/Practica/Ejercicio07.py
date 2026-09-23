@@ -1,4 +1,4 @@
-# Clase 5 Ejercicio 7: Convertidor de temperaturas
+# Ejercicio 7: Convertidor de temperaturas
 # Hacer dos funciones: convertir de fahrenheit a celsius y viceversa
 
 def menu():
