@@ -1,4 +1,5 @@
 /Java/EjercicioCiclos05/nbproject/private/
 /Java/EjercicioCiclos05/build/
 .vscode/settings.json
-.idea/
+.idea/.idea/
+**/.idea/
