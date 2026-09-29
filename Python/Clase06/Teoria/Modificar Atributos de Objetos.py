@@ -9,16 +9,16 @@ class Persona:
 
 persona1 = Persona('Cristian', 'Balmaceda',
                    '28')  #Necesitamos enviar argumentos, por eso no debe estar vacío dentro del parentesis.
-print(persona1.nombre)
-print(persona1.apellido)
-print(persona1.edad)
-
-#Tarea: Hacer el print igual que con el objeto2.
-
 print(f'El objeto1 de la clase persona es: {persona1.nombre} {persona1.apellido} su edad es: {persona1.edad}')
 
 persona2 = Persona('Osvaldo','Giordanini','45')
 print(f'El objeto2 de la clase persona es: {persona2.nombre} {persona2.apellido} Su edad es: {persona2.edad}')
 
-#Los objetos no comparten los valores, solo comparten los atributos
-# por eso se puede asignar diferentes valores a acada atributo.
+
+#Pregunta : ¿Se puede modificar los atributos de un objeto?
+#Respuesta: Por supuesto.
+
+persona1.nombre = 'Liliana'
+persona1.apellido = 'Buccella'
+persona1.edad = 40
+print(f'El objeto1 modificado de la clase persona es : {persona1.nombre} {persona1.apellido} Su edad es: {persona1.edad}')

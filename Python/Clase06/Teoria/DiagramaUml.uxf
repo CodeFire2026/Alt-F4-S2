@@ -1,0 +1,20 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>200</x><y>30</y><w>340</w><h>160</h></coordinates><panel_attributes>&lt;&lt;Persona&gt;&gt;
+
+--
+-Nombre: str
+-Apellido: str
+-Edad: int
+--
+Mostrar_detalle()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>180</y><w>30</w><h>130</h></coordinates><panel_attributes>lt=&lt;.
+
+</panel_attributes><additional_attributes>10;10;10;110</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>270</y><w>300</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes><additional_attributes>280;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>270</y><w>310</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;instanceOf&gt;&gt;</panel_attributes><additional_attributes>10;20;290;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>350</y><w>210</w><h>70</h></coordinates><panel_attributes>persona1:Persona
+--
+nombre: str = 'Cristian'
+apellido: str = 'Balmaceda'
+edad: int = 28</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>550</x><y>350</y><w>210</w><h>70</h></coordinates><panel_attributes>persona2: Persona
+--
+nombre: str = 'Osvaldo'
+apellido: str = 'Giordanini'
+edad: int = 45</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>280</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>640</x><y>280</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element></diagram>
