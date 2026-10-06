@@ -78,3 +78,4 @@ console.log(persona1.apellido); // despues
 const empleado1 = new Empleado("Maria", "Gimenez", "Sistemas");
 console.log(empleado1);
 console.log(empleado1.nombre); // a pesar de no estar dentro de la clase, podemos acceder al metodo get gracias a la herencia
+
