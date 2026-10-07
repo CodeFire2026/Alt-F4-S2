@@ -5,17 +5,21 @@ class Persona: # Creamos una clase...//
     #   self.nombre = 'Maxi'
     #   self.apellido = 'Rojas'
     #   self.edad = 39
-    def __init__(self, nombre, apellido, edad): # 8.3 Creación de objetos con argumentos...//
+    def __init__(self, nombre, apellido, dni, edad, *args, **kwargs): #9.7 metodo init dunder # 8.3 Creación de objetos con argumentos...//
         self.nombre = nombre
         self.apellido = apellido
+        self._dni = dni # 9.8 Encapsulamiento Parte 1. (encapsulado de manera sugerida)
         self.edad = edad
+        self.args = args
+        self.kwargs = kwargs
+
     def mostrar_detalle(self): # 8.8 Métodos de instancia: Definimos un método...//
-        print(f'Persona: {self.nombre} {self.apellido} su edad es {self.edad} años') # 8.8
+        print(f'La clase Persona tiene los siguientes datos: {self.nombre} {self.apellido} {self._dni} su edad es {self.edad} años, la direccion es: {self.args}, los datos importantes son: {self.kwargs}') # 8.8 , 9.7
 # Self seria igual a this....///
 
 
 # la referencia en init es indirecta...//
-persona1 = Persona('Maxi', 'Rojas', 39) # constructor que apunta directamente
+persona1 = Persona('Maxi', 'Rojas', 32569874,39) # constructor que apunta directamente
 # al metodo(es automatico) lo hace a traves del metodo self e init...// 8.3
 print(persona1.nombre)
 print(persona1.apellido)
@@ -34,11 +38,11 @@ print(persona1.edad)
 #  self.edad = edad
 
 # 8.4 Creamos más objetos en una clase
-persona2 = Persona('Lucas', 'Garcia', 38)
+persona2 = Persona('Lucas', 'Garcia', 35659985,38)
 print(f'El objeto 2 de la clase persona: {persona2.nombre} {persona2.apellido} '
       f'Su edad es: {persona2.edad} años')
 # Tarea: hacerlo con el objeto1
-persona1 = Persona('Maxi', 'Rojas', 39)
+persona1 = Persona('Maxi', 'Rojas', 32569874,39)
 print(f'El objeto 1 de la clase persona: {persona1.nombre} {persona1.apellido} '
       f'Su edad es: {persona1.edad} años')
 
@@ -74,6 +78,24 @@ print(f'Este es el telefono de: {persona2.nombre} {persona2.telefono}') # Hemos 
 
 # print(persona1.telefono) el objeto persona1 no tiene este atributo, da error...//
 
+# 9.7 Metodo init Dunder con argumentos variables...//
+# Modificacion en linea 8, 12, 13 y 16 *args **kwargs etc....///
+persona3 = Persona('Rogelio', 'Romero', 40568857,22, 'Telefono', '2614445557', 'Calle Lopez', 823,'Manzana', 77, 'Casa', 18, altura=1.83, Peso=105, CFavorito='Azul', Auto='Citroen', Modelo=2021 )
+persona3.mostrar_detalle()
+
+# 9.8 Encapsulamiento Parte 1
+# El Encapsulamiento es publico, su modificador de acceso es publico.
+# Cuando salimos de la identacion quedamos fuera de la clase, fuera de la clase hemos trabajado creando
+# por eso los atributos son totalmente publicos...
+# La forma mas utilizada para el encapsulamiento, es simplemente una sugerencia, no hay reestricciones reales...//
+
+# print(persona3._dni) # al poner: print(persona3.) esto no se debe utilizar(esta encapsulado),
+# esto dice que desconocemos python
+
+# 9.9 Encapsulamiento Parte 2...//
+# Otra forma de encapsulamiento que se conoce, pero que no se utiliza mucho es el doble guion bajo en el atributo
+# por ejemplo "__apellido" y esto ya evita que sea modificado...//
+# persona3.__nombre # Esta totalmente encapsulado...//
 
 
 
