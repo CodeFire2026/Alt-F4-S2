@@ -4,8 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import Clase09.Teoria.domain.Cliente;
-
 public class TestHerencia {
     public static void main(String[] args) {
         // Cliente 1 completo

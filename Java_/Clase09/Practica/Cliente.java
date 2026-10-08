@@ -1,7 +1,9 @@
-package Clase09.Teoria.domain;
+package Clase09.Practica;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import Clase09.Teoria.domain.Persona;
 
 public class Cliente extends Persona {
     private int idCliente;
