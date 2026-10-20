@@ -1,10 +1,25 @@
-/Java/EjercicioCiclos05/nbproject/private/
-/Java/EjercicioCiclos05/build/
-.vscode/settings.json
-HEAD
-.idea/.idea/
-**/.idea/
-Python/Clase06/Teoria/CreamosMasObjetos.py
-
+# IDEs y Editores
+.vscode/
 .idea/
-d172c9613566ee838f338a908582bba68d95f230
+nbproject/private/
+*.iml
+
+# Python
+__pycache__/
+.venv/
+venv/
+ENV/
+env/
+*.pyc
+
+# Java
+build/
+target/
+*.class
+*.log
+hs_err_pid*.log
+replay_pid*.log
+.mtj.tmp/
+*.jar
+*.war
+*.ear
