@@ -4,8 +4,8 @@ class Producto:
     def __init__(self, nombre, precio):
         producto.contador_productos += 1 # Aumento para la variable clase...///
         self._id_producto = Producto.contador_productos # Asignacion desde la variable de clase...//
-        self.nombre = nombre
-        self.precio = precio
+        self._nombre = nombre
+        self._precio = precio
     # Metodo setters and getters ...///
     @property
     def nombre(self):
@@ -13,6 +13,7 @@ class Producto:
 
     @nombre.setter
     def nombre(self, nombre):
+        self._nombre = nombre
 
     @property
     def precio(self):
@@ -24,7 +25,7 @@ class Producto:
 
     # Sobrescribimos el metodo str...//
     def __str__(self):
-        return f'Id Producto: {self._id_producto}, Nombre: {self.nombre}, Precio: {self.precio}'
+        return f'Id Producto: {self._id_producto}, Nombre: {self._nombre}, Precio: {self._precio}'
 
 
 if __name__ == '__main__': # Solo sera visible si la prueba se ejecuta desde aqui...//
