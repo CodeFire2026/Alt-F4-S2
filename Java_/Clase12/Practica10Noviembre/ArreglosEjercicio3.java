@@ -3,7 +3,7 @@ Ejercicio 3: Leer 5 números que se introducirán ordenados de forma creciente.
 Estos los guardaremos en una tabla de tamaño 10. Leer un número N, e insertarlo
 en el lugar adecuado para que la tabla continúe ordenada.
 */
-package Clase12.Practica;
+package Clase12.Practica10Noviembre;
 
 import java.util.Scanner;
 

@@ -1,10 +1,10 @@
 # Clase 1
 
-**USO DE GITHUB**  
+### <ins>USO DE GITHUB</ins>
 GitHub es una plataforma que nos permite guardar repositorios de Git que podemos usar como servidores remotos y ejecutar algunos comandos de forma visual e interactiva (sin necesidad de la consola de comandos).
 Luego de crear nuestra cuenta, podemos crear o importar repositorios, crear organizaciones y proyectos de trabajo, descubrir repositorios de otras personas, contribuir a esos proyectos, dar estrellas y muchas otras cosas
 
-**COMANDOS**  
+### <ins>COMANDOS</ins>
 `Import repository`  
 `New repository`  
 `New organization`: significa que es como tu empresa  
@@ -13,10 +13,10 @@ Luego de crear nuestra cuenta, podemos crear o importar repositorios, crear orga
 `New repository`: ponemos el nombre `Prueba-Inicio.Repo`. Así armamos un repositorio. Hay muchas licencias para publicar el código, pero NO lo hacemos ahora.  
 `Create repository`: lo ponemos en privado o en Publico.
 
-**README**  
+### <ins>README</ins>
 El README.md es el archivo que veremos por defecto al entrar a un repositorio. Es una muy buena práctica configurarlo para describir el proyecto, los requerimientos y las instrucciones que debemos seguir para contribuir correctamente.
 
-**CLONACIÓN**  
+### <ins>CLONACIÓN</ins>
 Para clonar un repositorio desde GitHub (o cualquier otro servidor remoto) debemos copiar la URL (por ahora, luego usaremos ssh) y ejecutar el comando git clone + la URL que acabamos de copiar. Esto descargará la versión de nuestro proyecto que se encuentra en GitHub. Clonar solo sirve para aquellos que todavía no tienen el proyecto en sus maquinas, si ya lo tenes, no hace falta clonar (se usaría git fetch, pull, etc.).
 
 _ATENCIÓN_: ¿Por qué? Porque a través de https nos pedirá usuario(nombre perfil) y contraseña. Igual esto ya no funciona de una manera fácil.
@@ -27,13 +27,13 @@ _ATENCIÓN_: ¿Por qué? Porque a través de https nos pedirá usuario(nombre pe
 
 # Clase 2
 
-**LLAVE PÚBLICA**  
+### <ins>LLAVE PÚBLICA</ins>
 Vamos a cargar la llave SSH publica en GitHub
 >( ! ) SI YA HAZ HECHO ESTE TRABAJO **NO** SE DEBE REPETIR EL SSH
 
 Para copiar la llave publica debes ir al archivo `.ssh` y allí encontrarás el archivo `.pub` lo podes abrir con un editor de texto y luego copiar el contenido que esta dentro. Luego, iremos a GitHub y nos dirigimos a _setting_, vamos a _SSH and GPG keys_. Le damos a crear una nueva clave (`New SSH key`), ponemos nombre y pegamos la ssh publica, con esto esta listo. Aconsejo que la ssh tenga el nombre del ordenador en el que estas trabajando. Esto se debe hacer con cada pc nueva o dispositivo nuevo que tengamos para acceder a nuestra cuenta de GitHub.
 
-**COMANDOS**  
+### <ins>COMANDOS</ins>  
 ```
 git branch               <- Vemos en que rama estamos
 

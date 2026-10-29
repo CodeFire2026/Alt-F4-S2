@@ -3,7 +3,7 @@ Ejercicio 1: Leer 10 numeros enteros y guardarlos en un arreglo. Debemos
 mostrarlos en el siguiente orden: el primero, el ultimo, el segundo, el penultimo,
 el tercero, etc.
 */
-package Clase12.Practica;
+package Clase12.Practica10Noviembre;
 
 import java.util.Scanner;
 

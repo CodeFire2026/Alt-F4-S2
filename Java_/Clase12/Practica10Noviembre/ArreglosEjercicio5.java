@@ -2,7 +2,7 @@
 Ejercicio 5: Leer 10 enteros en una tabla. Guardar en otra tabla los elementos
 pares, y a continuación los elementos impares.
 */
-package Clase12.Practica;
+package Clase12.Practica10Noviembre;
 
 import java.util.Scanner;
 
