@@ -150,104 +150,46 @@ Se usa para descargar _solamente_ el historial más reciente del servidor, sin h
 
 
 
-
-
-
-
-
-
-**`git add`**: Añade un archivo al área de preparación, puede usarse un punto `.` para indicar que _todo_ lo que se encuentra en el directorio actual (en el que estamos parados) sea añadido al área de preparación (ej. estamos parados en el directorio `python/`, e ingresamos el comando `git add .`, esto añadirá todos los archivos y cambios hechos en `python/` al área de preparación listos a ser commiteados).
-
-
-
-
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git add</code></b></summary>
 
+Añade un archivo al área de preparación, puede usarse un punto `.` para indicar que _todo_ lo que se encuentra en el directorio actual (en el que estamos parados) sea añadido al área de preparación (ej. estamos parados en el directorio `python/`, e ingresamos el comando `git add .`, esto añadirá todos los archivos y cambios hechos en `python/` al área de preparación listos a ser commiteados).
 
 - **`-A`**: stagea todos los cambios (archivos nuevos, modificados y eliminados) de **todo** el repositorio, sin importar desde qué carpeta se ejecute el comando
-
-
+---
 </details>
 
 
 
-
-
-
-
-
-
-
-**`git restore`**: Lo opuesto a add, revierte los cambios hechos a un archivo/directorio para que vuelvan a estar como estén en el commit más reciente.
-
-<!--INFORMACION-->
-
-<div style="margin-top: -12px;">
 <details>
-<summary>Más información</summary>
+<summary><b><code>git restore</code></b></summary>
 
-
-Se le puede especificar un archivo con `git restore <nombre_archivo>` o directamente se puede revertir todo lo que no esté stageado con `git restore .`. También se le puede especificar qué estado revertir, por defecto se interpreta que es `--worktree`, es decir que la restauracion se aplicará a los archivos locales (en el working directory).
-
-
-</details>
-
-
-
-
-<div style="margin-top: 0px;">
-<details>
-<summary>Opciones</summary>
-
+Lo opuesto a add, revierte los cambios hechos a un archivo/directorio para que vuelvan a estar como estén en el commit más reciente. Se le puede especificar un archivo con `git restore <nombre_archivo>` o directamente se puede revertir todo lo que no esté stageado con `git restore .`  
+También se le puede especificar qué estado revertir, por defecto se interpreta que es `--worktree`, es decir que la restauracion se aplicará a los archivos locales (en el working directory).
 
 - **`--staged <nombre-archivo>`**: Saca al archivo del staging area sin tocar al archivo local, puede combinarse con `--worktree` para sacar del staging al archivo Y restaurarlo a como estaba en el ultimo commit
 - **`--source=<hash/HEAD/branch> -- <nombre-archivo>`**: Permite restaurar el archivo al estado que tenia en el commit especificado o al estado que tenia en otra rama, hay que hacer un `git add` y un commit despues de usar este comando para guardar los cambios (el comando completo usando el nombre de la rama seria `git restore --source=rama2 -- archivo.txt`, se puede usar `--` como en `checkout` para indicar que lo que sigue es una ruta de archivo y no una rama)
-
-
+---
 </details>
 
 
 
-
-
-
-
-
-
-
-**`git commit`**: Toma todos los cambios que hay en el área de preparación (los que fueron añadidos con `git add`) y los graba permanentemente en el historial del repositorio actual, si no se ingresa ninguna opción entonces se abrirá el editor de texto que tengas (puede ser _vim_ o _nano_) para escribir el mensaje de commit.
-
-
-
-
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git commit</code></b></summary>
 
+Toma todos los cambios que hay en el área de preparación (los que fueron añadidos con `git add`) y los graba permanentemente en el historial del repositorio actual, si no se ingresa ninguna opción entonces se abrirá el editor de texto que tengas (puede ser _vim_ o _nano_) para escribir el mensaje de commit.
 
 - **`-m "mi mensaje"`**: MESSAGE — Nos permite ingresar un comentario para el commit sin tener que abrir el editor de texto
 - **`-a`** o **`--all`**: Añade al commit todos los archivos que ya estén trackeados y que hayan sido modificados o eliminados, ahorrandote la necesidad de hacer `git add` (ojo, esta opción no incluye archivos nuevos)
-
-
+---
 </details>
 
 
 
-
-
-
-
-
-
-
-**`git push`**: Se usa para subir los cambios locales al repositorio remoto vinculado. Para el primer push se debe indicar la rama usando `git push -u origin <rama>` (origin se establece automaticamente con `git clone` o lo estableces manualmente con `git remote`, para info sobre `-u` leer opciones de este comando). Advertencia, la rama que le indicamos se vinculará con la rama en la que estamos parados, asegurate de que la rama local y la rama remota sean las que quieras que se vinculen (si te equivocaste, leer opciones de `git branch` para solucionarlo).
-
-
-
-
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git push</code></b></summary>
 
+Se usa para subir los cambios locales al repositorio remoto vinculado. Para el primer push se debe indicar la rama usando `git push -u origin <rama>` (origin se establece automaticamente con `git clone` o lo estableces manualmente con `git remote`, para info sobre `-u` leer opciones de este comando). Advertencia, la rama que le indicamos se vinculará con la rama en la que estamos parados, asegurate de que la rama local y la rama remota sean las que quieras que se vinculen (si te equivocaste, leer opciones de `git branch` para solucionarlo).
 
 - **`-u`** o **`--set-upstream` (seguido de `origin <nombre-de-rama>`)**: Esta opción le indica a Git que recuerde la dirección del repo remoto y la rama remota ingresados para no tener que volver a ingresar el comando completo de vuelta (es decir, que para la proxima solo será necesario ingresar `git push`)
 - **`--all`**: Sube todos los cambios de todas las ramas, no solo de la que estas parado
@@ -255,51 +197,27 @@ Se le puede especificar un archivo con `git restore <nombre_archivo>` o directam
 - **`-f`** o **`--force`**: Si el servidor rechaza el push, se lo puede forzar con esta opción. Sobreescribe el remoto con tu local, se puede pisar progreso cuidado
 - **`--force-with-lease`**: Preferible antes que `-f`, fuerza tu push al servidor sin borrar los cambios nuevos de otros
 - **`origin --delete <rama>`**: Permite eliminar del servidor la rama pasada como argumento
-
-
+---
 </details>
 
 
 
-
-
-
-
-
-
-
-**`git tag <version> <hash-del-commit>`**: Permite crear punteros en el historial de commits (ej. `git tag v1.0 <hash>`).
-
-
-
-
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git tag &lt;identificador&gt; &lt;hash-del-commit&gt;</code></b></summary>
 
+Permite crear punteros en el historial de commits (ej. `git tag v1.0` que lo creará en donde esté parado HEAD, o `git tag release <hash>` que creará la tag apuntando al commit que indicaste).
 
 - **`-a <version> -m "mensaje de etiqueta anotada"`**: ANNOTATED — Le indica a git a crear una etiqueta anotada en vez de una ligera, la diferencia es que la ligera es un simple puntero a un commit sin información detallada, como si fuera una rama que no se mueve, mientras que una etiqueta anotada es un objeto completo e independiente dentro de git el cual guarda quién la creó y cuándo se creó. Pide si o si un mensaje si se usa esta opcion
 - **`-d <version>`**: DELETE — Elimina la etiqueta que le indiquemos como argumento, por ej. `git tag -d version_2.4`
-
-
+---
 </details>
 
 
 
-
-
-
-
-
-
-
-**`git log`**: Muestra todos los commits hechos para el repositorio actual, se le puede especificar un archivo (`git log archivo.txt`) para ver el historial de commits para ese archivo.
-
-
-
-
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git log</code></b></summary>
 
+Muestra todos los commits hechos para el repositorio actual, se le puede especificar un archivo (`git log archivo.txt`) para ver el historial de commits para ese archivo.
 
 - **`--oneline`**: Muestra de forma más resumida los commits (solo un hash corto por linea)
 - **`--graph`**: Muestra de forma grafica con arte ASCII los commits y sus ramas
@@ -312,117 +230,56 @@ Se le puede especificar un archivo con `git restore <nombre_archivo>` o directam
 - **`--author="<nombre>"`**: Muestra los commits hechos por el usuario ingresado, resaltando su nombre con color
 - **`--grep="<palabra-clave>"`**: Busca y muestra los commits que contengan en sus mensajes el texto ingresado. Ejemplo: `--grep="Java"`. También se puede agregar `-i` para que sea case insensitive, ejemplo: `--grep="modify" -i`
 - **`-S "<palabras-clave>"`**: Muestra los commits cuyos archivos contengan las palabras ingresadas. Ejemplo: `-S "if __name__"`
-
-
+---
 </details>
 
 
 
-
-
-
-
-
-
-
-**`git branch`**: Sirve para ver las ramas existentes y en cuál estamos parados.
-
-
-
-
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git branch</code></b></summary>
 
+Sirve para ver las ramas existentes y en cuál estamos parados.
 
 - **`-u <apodo-del-remoto>/<rama-remota>`** o **`--set-upstream-to=<apodo-del-remoto>/<rama-remota>`**: Al usar esta opcion con git branch podemos vincular de forma especifica nuestra rama en la que estemos parados con la rama que hayamos especificado, por ej. estando parados en la rama main, hacemos `git branch -u origin/main` para vincular nuestra rama local "main" con la rama remota "main". Esto es util por si nos equivocamos y vinculamos una rama con otra que no era, ya que con este comando podemos sobreescribir con qué rama se vincula la nuestra
 - **`-a`**: Lista todas las ramas incluyendo las remotas
 - **`-m <nuevo-nombre>`**: Cambia el nombre de la rama actual al nombre dado como argumento
 - **`-d <nombre-rama>`**: Elimina de forma segura una rama (solo permite eliminar si la rama ya fue mergeada con main)
 - **`-D <nombre-rama>`**: Elimina de forma forzada una rama (no importa si fue mergeada con main o no)
-
-
+---
 </details>
 
 
-
-
-
-
-
-
-
-
-**`git checkout`**: Principalmente se usa para cambiar de rama, aunque también puede crear nuevas ramas o restaurar archivos a una version anterior (a una versión de un commit específico o del commit anterior).
-
-<!--INFORMACION-->
-
-<div style="margin-top: -12px;">
 <details>
-<summary>Más información</summary>
-
+<summary><b><code>git checkout</code></b>: Principalmente se usa para cambiar de rama, aunque también puede crear nuevas ramas o restaurar archivos a una version anterior (a una versión de un commit específico o del commit anterior).</summary>
 
 Para cambiar a otra rama el comando seria `git checkout <nombre-rama>`, mientras que para restaurar un archivo a como estaba en el commit anterior de la rama actual seria `git checkout <nombre-archivo>`. Ojo: hacer checkout puede hacer que cualquier cambio local (en el working directory) que no haya sido stageado sea eliminado o perdido (si solo cambias de rama no debería haber ningun problema, pero por las dudas nunca olvides stashear tu trabajo no stageado antes de hacer checkout).
-
-
-</details>
-
-
-
-
-<div style="margin-top: 0px;">
-<details>
-<summary>Opciones</summary>
-
 
 - **`-b <nombre-de-nueva-rama>`**: Permite crear y cambiarse a una nueva rama ingresando un nombre como argumento
 - **`<nombre-rama> -- <nombre-del-archivo>`**: Permite que el estado o version de un archivo vuelva al estado que tenia en la rama especificada, hay que hacer un commit despues de este comando para guardar el cambio. El `--` le aclara a Git que lo que sigue es el nombre de un archivo y no el nombre de una rama a la que queres cambiar, util cuando tenes un archivo que se llama igual que tu rama (ya que por defecto checkout prioriza cambiar de rama antes que restaurar un archivo)
 - **`<hash-de-commit-deseado> <nombre-del-archivo>`**: Permite cambiar la version de un archivo dado el hash del commit especifico deseado
 - **`<hash-de-un-commit>`**: Nos pondrá en Detached Head y restaurará el área de trabajo a como estaba en el commit especificado. Para salir de este estado y restaurar el puntero (HEAD) podemos hacer `git checkout <nombre-de-rama-main>`
 - **`-f`** o **`--force`**: Fuerza el cambio de rama o la restauración de archivos, ignorando y descartando cualquier cambio local que no haya sido stageado. Por defecto git no deja cambiar a una rama si tus cambios locales hacen conflicto con la rama de destino, pero al hacer `git checkout -f <nombre-rama>` lo obligas, perdiendo cualquier modificacion local que chocaban con la rama. Mientras que si haces `git checkout -f` sin especificar un archivo o rama el comando "limpia" el working directory, restaurando todos los archivos trackeados (los no trackeados son ignorados) y los archivos stageados a como estaban en el commit más reciente, destruyendo cualquier cambio que hayas hecho. Cabe mencionar que ambos usos de `-f` son irreversibles
-
-
+---
 </details>
 
 
 
-
-
-
-
-
-
-
-**`git switch <nombre-de-rama>`**: Sirve para cambiar entre ramas, similar a checkout pero menos ambiguo y más seguro (se recomienda usarlo junto con `git restore` si se desea imitar las funciones de `checkout`).
-
-
-
-
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git switch &lt;nombre-de-rama&gt;</code></b></summary>
 
+Sirve para cambiar entre ramas, similar a checkout pero menos ambiguo y más seguro (se recomienda usarlo junto con `git restore` si se desea imitar las funciones de `checkout`).
 
 - **`-c <branch_name>`**: Creará una rama con el nombre dado como argumento
-
-
+- **`-`**: Cambias instantaneamente a la ultima rama usada (por ej. estabas en main, te cambiaste a secundaria, ahora podes `git switch -` para volver a main, util cuando querés volver a una rama secundaria rápido)
+---
 </details>
 
 
 
-
-
-
-
-
-
-
-**`git merge <nombre-de-rama-fuente>`**: Sirve para fusionar dos ramas distintas, para esto primero hay que pararse en la rama que va a recibir los cambios, por ejemplo primero hacer `git switch main` seguido de `git merge second` (esto resultaria en los cambios de `second` aplicandose a `main`).  
-
-<!--INFORMACION-->
-
-<div style="margin-top: -12px;">
 <details>
-<summary>Más información</summary>
+<summary><b><code>git merge &lt;nombre-de-rama-fuente&gt;</code></b></summary>
 
+Sirve para fusionar dos ramas distintas, para esto primero hay que pararse en la rama que va a recibir los cambios, por ejemplo primero hacer `git switch main` seguido de `git merge second` (esto resultaria en los cambios de `second` aplicandose a `main`).  
 
 Si la rama destino y fuente tuvieron commits por separado antes del merge, git hará el merge como un commit nuevo en vez de un _fast-forward_. Pero si se genera un conflicto, el merge se detendrá y el archivo con el conflicto tendrá el siguiente bloque de texto cubriendo a las lineas problemáticas:  
 
@@ -436,75 +293,32 @@ Si la rama destino y fuente tuvieron commits por separado antes del merge, git h
 
 Para solucionar esto hay que borrar las marcas (`<=>` y `HEAD`/`NOMBRE-RAMA`) y quedarse con el codigo que mejor convenga (o combinarlos, el punto es que hay que editar y que quede solo uno). Luego de guardar el archivo con el código resuelto hay que hacer `git add <archivo_con_el_problema.txt>`, después de eso se puede usar `git merge --continue` para finalizar el merge.
 
-
-</details>
-
-
-
-
-<div style="margin-top: 0px;">
-<details>
-<summary>Opciones</summary>
-
-
 - **`--continue`**: Permite finalizar un merge una vez resueltos los conflictos manualmente, esta opción es preferible antes que hacer un `git commit` porque tiene más funcionalidades (verifica si hay un merge en proceso y avisa si dejaste algun conflicto o si no guardaste los archivos)
 - **`--abort`**: Si el conflicto es muy complejo esta opción revierte el repositorio a como estaba antes de hacer el merge, util como boton de pánico en caso de un conflicto crítico
-
-
+---
 </details>
 
 
 
-
-
-
-
-
-<!-- DEFINICION -->
-
-**`git reset <hash-de-commit>`**: Sirve para volver en el tiempo y "borrar" commits. Seria como un deshacer forzoso (así que cuidado, ver `git revert` para una opción más segura y amigable cuando se trabaja en grupo). Se puede indicar el nombre de un archivo en vez de un hash, esto hará que el archivo sea removido del staging area (aunque es preferible usar `git restore --staged`).
-
-
-
-
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git reset &lt;hash-de-commit&gt;</code></b></summary>
 
+Sirve para volver en el tiempo y "borrar" commits. Seria como un deshacer forzoso (así que cuidado, ver `git revert` para una opción más segura y amigable cuando se trabaja en grupo). Se puede indicar el nombre de un archivo en vez de un hash, esto hará que el archivo sea removido del staging area (aunque es preferible usar `git restore --staged`).
 
 - **`--soft`**: Va atras en el tiempo pero mantiene los cambios que tengas stageados. (ej. `git reset --soft HEAD~1` haria un deshacer al ultimo commit, pero también se puede especificar un hash)
 - **`--mixed`**: Va atras en el tiempo y saca del staging area a los cambios que tengas (mantiene los archivos en tu disco intactos). Este es el que Git usa por defecto, es decir, si ingresas `git reset` sin nada se considera un `--mixed HEAD`, util para cuando queres deshacer un `git add .`
 - **`--hard`**: Va atras en el tiempo y no solo saca del staging area sino que tambien borra a los cambios de tu disco
-
-
+---
 </details>
-
-
-
-
-
-
-
-
 
 
 **`git revert <hash-de-commit-deseado>`**: Revierte los cambios creando un nuevo commit, en lugar de volver en el tiempo. Ideal para ramas compartidas con equipos, preferible antes que usar `reset`.
 
 
-
-
-
-
-
-
-
-**`git stash`**: Util para guardar temporalmente los cambios no confirmados (staged o no) para poder trabajar en otras ramas o realizar una tarea de emergencia.
-
-
-
-
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git stash</code></b></summary>
 
+Util para guardar temporalmente los cambios no confirmados (staged o no) para poder trabajar en otras ramas o realizar una tarea de emergencia.
 
 - **`pop`**: Permite retomar el ultimo stash y lo elimina de la lista de stashes
 - **`push -m <mensaje>`**: Guarda un stash con un mensaje dado, util para identificar el stash
@@ -513,53 +327,26 @@ Para solucionar esto hay que borrar las marcas (`<=>` y `HEAD`/`NOMBRE-RAMA`) y 
 - **`apply stash@{n}`**: Aplica un stash sin eliminarlo de la lista como hace `pop`
 - **`drop stash@{n}`**: Elimina un stash especifico con el numero de stash
 - **`clear`**: Elimina todos los stashes guardados
-
-
+---
 </details>
-
-
-
-
-
-
-
-
-
-
-**`git rm <nombre-archivo>`**: GIT REMOVE — Elimina del área de preparación y también del worktree al archivo pasado como argumento. Opciones\:
-
 
 
 
 <details>
-<summary>Opciones</summary>
-
+<summary><b><code>git rm &lt;nombre-archivo&gt;</code></b>: GIT REMOVE — Elimina del área de preparación y también del worktree al archivo pasado como argumento.</summary><br>
 
 - **`--cached <nombre-archivo>`**: borra el archivo (o carpeta si se combina con `-r`) solo del área de preparación y NO de tu computadora, util para sacar archivos o carpetas que añadiste por error y querés agregar a tu .gitignore
 - **`-f`** o **`--force`**: Por defecto git no te deja borrar un archivo que tenga cambios locales sin guardar en un commit, esta opción ignora esos cambios y elimina el archivo de todas formas (tanto del staging como del working directory)
 - **`-r <nombre-carpeta/>`**: RECURSIVE — Permite borrar carpetas y todos sus contenidos dentro
-
-
-</details>
-
-
+---
+</details><br>
 
 
 
-
-
-
-## Misceláneos a saber
-
+## ❔ Misceláneos a saber
 
 
 **`code`**: Abre Visual Studio Code, se le puede indicar qué abrir (ej. `code .` para abrir la carpeta actual, `code archivo.txt` para abrir un archivo en particular)
-
-
-
-
-
-
 
 
 
@@ -567,19 +354,7 @@ Para solucionar esto hay que borrar las marcas (`<=>` y `HEAD`/`NOMBRE-RAMA`) y 
 
 
 
-
-
-
-
-
-
 **`git shortlog`**: Muestra el nombre del usuario, la cantidad de commits al lado de su nombre y una lista de solo los mensajes de los commits
-
-
-
-
-
-
 
 
 

@@ -281,4 +281,4 @@ El profe pide:
 <br><br>
 
 # Glosario de comandos de Git
-Nuestra colección de todos los comandos de git vistos se encuentra [aquí](#)
+Nuestra colección de todos los comandos de git vistos se encuentra [aquí](https://github.com/CodeFire2026/Alt-F4-S2/blob/main/Git/GlosarioComandos.md)
