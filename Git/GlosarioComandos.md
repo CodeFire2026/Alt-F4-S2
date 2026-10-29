@@ -75,7 +75,7 @@ Sirve para obtener y establecer variables de configuración que controlan el fun
 - **`--global <variable>`**: configuraciones que estarán disponible para todos los repositorios del usuario actual
 - **`--system <variable>`**: configuraciones que estarán disponible para todos los usuarios del SO y todos los repositorios (requiere permisos de administrador)
 ---
-</details><br>
+</details>
 
 
 
@@ -90,8 +90,6 @@ Permite generar una clave ssh guardandola por defecto en una carpeta oculta llam
 ---
 </details><br>
 
-
-<br>
 
 
 # 🧰 Utileria diaria
@@ -118,7 +116,7 @@ Por si solo, muestra los nombres de los remotos a los que estemos conectados (po
 - **`rename <apodo-original> <nuevo-apodo>`**: Si queres usar otro apodo que no sea "origin", primero tenes que indiar qué nombre queres modificar seguido del nuevo nombre para tu remoto. Por ej. `git remote rename origin github` (esto haria que tengamos que escribir "github" en lugar de "origin" para cualquier comando en el futuro)
 - **`remove <apodo>`** o **`rm`**: Ejemplo `git remote rm origin`. Como indica el nombre sirve para desvincular por completo un repo remoto (no borra archivos)
 ---
-</details><br>
+</details>
 
 
 <details>
@@ -128,47 +126,23 @@ Descarga e integra de inmediato los cambios remotos a tu espacio local. Es técn
 
 - **`origin <nombre-de-rama>`**: En sí "origin" es un alias/apodo, el cual apunta a la dirección URL/SSH del servidor remoto que hayamos clonado o ya pusheado antes (si no lo has hecho, ver info sobre `git remote` y su opción `add`), la rama se indica para que git sepa de qué rama hay que traer los cambios (cuidado, si por ejemplo queres traer una nueva rama remota llamada `second` a tu espacio local pero solo tenés creada la rama `main`, tenés que sí o sí crear la rama `second` primero de forma local, cambiarte a esa rama con `git switch` o `git checkout`, y _recien_ ahí hacer `git pull` o sino tus cambios se verán reflejados en la rama equivocada, que en este ejemplo seria `main`)
 ---
-</details><br>
-
-
-
-
-
-
-
-
-
-**`git fetch`**: Se usa para descargar _solamente_ el historial más reciente del servidor, sin hacer cambios inmediatos a tu zona de trabajo, permite revisar los cambios o ramas nuevas que se han hecho antes de integrarlos localmente, a diferencia de `git pull` que intenta mergear automaticamente.
-
-
-
-
-<details>
-<summary>Opciones</summary>
-
-
-- **`origin <nombre-de-rama>`**: Es más bien un alias. Por defecto es la dirección URL del servidor remoto que hayamos clonado o ya pusheado antes. Sepase que `fetch` no tiene `-u`, por lo tanto este paso debe hacerse previo o se debe incluir manualmente `origin`
-- **`-p`** o **`--prune`**: Normalmente, si se borraron ramas de forma remota, vas a seguir viendolas localmente. Usando esta opción esas ramas fantasmas se limpian
-
-
 </details>
 
 
 
+<details>
+<summary><b><code>git fetch</code></b></summary>
 
+Se usa para descargar _solamente_ el historial más reciente del servidor, sin hacer cambios inmediatos a tu zona de trabajo, permite revisar los cambios o ramas nuevas que se han hecho antes de integrarlos localmente, a diferencia de `git pull` que intenta mergear automaticamente.
 
-
-
+- **`origin <nombre-de-rama>`**: Es más bien un alias. Por defecto es la dirección URL del servidor remoto que hayamos clonado o ya pusheado antes. Sepase que `fetch` no tiene `-u`, por lo tanto este paso debe hacerse previo o se debe incluir manualmente `origin`
+- **`-p`** o **`--prune`**: Normalmente, si se borraron ramas de forma remota, vas a seguir viendolas localmente. Usando esta opción esas ramas fantasmas se limpian
+---
+</details>
 
 
 
 **`git status`**: Muestra los cambios hechos en el área de trabajo, los cambios añadidos al área de preparación y qué archivos son nuevos y todavía no trackeados (todo en el repositorio actual).
-
-
-
-
-
-
 
 
 
