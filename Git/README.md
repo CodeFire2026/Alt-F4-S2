@@ -204,8 +204,8 @@ git push --set-upstream origin main     # Ejecutar el cambio, el error arreglado
 # 0. Abre git bash
 
 cd Documentos
-mkdir class-git             #Crea la carpeta o directorio de trabajo
-ls -al                      #Revisa lo que va haciendo, los archivos o directorios que tiene
+mkdir class-git         # Crea la carpeta o directorio de trabajo
+ls -al                  # Revisa lo que va haciendo, los archivos o directorios que tiene
 
 # 1. No debe hacer un git init, debe buscar el repositorio en el cual esta invitado a participar, por supuesto en GitHub.
 # 2. Pasa a clonar desde HTTPS, copiar la url, esto es porque no se arranca el proyecto desde cero, se esta uniendo otro colaborador.
@@ -213,15 +213,15 @@ ls -al                      #Revisa lo que va haciendo, los archivos o directori
 git clone url-copiada-github        #Esto hace que clonemos el repositorio
 
 # 4. No pide ni usuario ni contraseña si el repositorio es publico.
-code .              # Abre VSC y comienza con cambios, o abre el siguiente comando para hacer modificaciones
-vim historia.txt    # Vamos a escribir: Aquí esta un nuevo colaborador
+code .                  # Abre VSC y comienza con cambios, o abre el siguiente comando para hacer modificaciones
+vim historia.txt        # Vamos a escribir: Aquí esta un nuevo colaborador
 vim escribimos el mensaje del commit    #Esto en Ubuntu
 ctrl + x
-s                   # Para un si 
-enter               # Terminado el mensaje del commit
+s                       # Para un si 
+enter                   # Terminado el mensaje del commit
 vim escribimos el mensaje del commit    #Esto en git bash window
-esc                 # Presionamos esc luego de terminar de escribir
-:wq!                # Para salir del editor vim en window
+esc                     # Presionamos esc luego de terminar de escribir
+:wq!                    # Para salir del editor vim en window
 
 # Luego...
 git status
@@ -243,7 +243,7 @@ git push origin main    #Colocar nombre de usuario y contraseña, listo
 # 9. El dueño del repositorio no ve los cambios, ¿Qué hacer?
 git pull origin main
 git fetch
-git log --stat  #Se verá claro que el colaborador ingreso su primer commit
+git log --stat          # Se verá claro que el colaborador ingreso su primer commit
 
 # 10. A partir de ahora el dueño del repositorio y el colaborador deberán repartir el trabajo, esto se hace con distintas ramas de trabajo: el dueño trabajará desde la rama header y el colaborador desde la rama footer, al final cuando se termine, se hara un merge para terminar el proyecto.
 ```
