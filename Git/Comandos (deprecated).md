@@ -1,12 +1,17 @@
-# Comandos y Tips de Git
+# ℹ Comandos y Tips de Git
+
 
 Listado de (casi) todos los comandos que hemos visto y usado en clases. Se recomienda fuertemente buscar con `Ctrl + F` el comando del que necesites aprender o recordar.
 
 _⚠️ OJO: cualquier `<cosa-entre-flechas>` es a modo de ejemplo y debe reemplazarse con su respectivo nombre/comando/aclaración sin incluir las flechas (a menos que se indique lo contrario). Si hay comillas `"` en el comando es porque **sí** deben incluirse (si no funciona, probar sin comillas)._
 
+
 <br>
 
-# Las bases de Bash (CLIs)
+
+# 💻 Las bases de Bash (CLIs)
+
+
 
 **`tab` (tecla)**: permite autocompletar nombres de archivos, directorios, comandos e incluso opciones
 
@@ -29,7 +34,6 @@ _⚠️ OJO: cualquier `<cosa-entre-flechas>` es a modo de ejemplo y debe reempl
 **`cat`**: CONCATENATE — Muestra los contenidos de un archivo dado como argumento. (ej. `cat usuarios.txt` mostrará por pantalla los caracteres que contenga ese archivo).
 
 **`--help`**: Opcion universal para la mayoria de comandos, devuelve instrucciones de uso, opciones e información sobre el comando que se haya indicado (ej. `mkdir --help` mostrará información detallada del comando `mkdir`, mientras que `rm --help` mostrará información del comando `rm`).
-
 
 
 **`ls`**: LIST — Muestra por pantalla todos los archivos y directorios de la ruta actual (al ingresar el comando solo), aunque también se le puede pasar una ruta completa y mostrará su contenido (por ej. si estamos en `~` e ingresamos el comando `ls tecnicatura2026/2do_Semestre/python/Clase5`, la consola mostrará todos los ejercicios de la clase 5).
@@ -58,107 +62,54 @@ _⚠️ OJO: cualquier `<cosa-entre-flechas>` es a modo de ejemplo y debe reempl
 <br>
 
 
-# Configuración e información de Git
+# 🔧 Configuración e información de Git
 
-**`git config`**: Sirve para obtener y establecer variables de configuración que controlan el funcionamiento, la apariencia y el comportamiento de Git (principalmente para establecer nombre e email).
 
 <details>
-<summary></summary>
+<summary><b><code>git config</code></b></summary>
+
+Sirve para obtener y establecer variables de configuración que controlan el funcionamiento, la apariencia y el comportamiento de Git (principalmente para establecer nombre e email).
 
 - **`--list`** o **`-l`**: Muestra en forma de lista por pantalla las configuraciones actuales de tu Git, incluyendo información como Usuario e Email (si es que fueron ingresados antes)
 - **`--local <variable>`**: configuraciones que solo estarán disponibles para el repositorio actual, sobreescribe a `global` y a `system` (por ej. `--local user.name "Juan Perez"` para ingresar tu nombre o `--local user.email "juanp@gmail.com"` para ingresar tu mail)
 - **`--global <variable>`**: configuraciones que estarán disponible para todos los repositorios del usuario actual
 - **`--system <variable>`**: configuraciones que estarán disponible para todos los usuarios del SO y todos los repositorios (requiere permisos de administrador)
+---
+</details><br>
 
-</details>
 
-<br>
-
-**`ssh-keygen -t ed25519 -C "<email>"`**: Permite generar una clave ssh guardandola por defecto en una carpeta oculta llamada `.ssh` en `~` (esto se combina con el [script para iniciar el agente al abrir bash](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows)), el nombre del archivo por defecto depende de tu algoritmo, en este caso seria `id_ed25519`. Al crear la clave te pedirá dónde guardarla, presionar enter para dejar por defecto. Al igual que preguntará por una contraseña (y otra vez para confirmarla), esto se puede dejar en blanco si se quiere.
 
 <details>
-<summary>Opciones</summary>
+<summary><b><code>ssh-keygen -t ed25519 -C "&lt;email&gt;"</code></b></summary>
 
+Permite generar una clave ssh guardandola por defecto en una carpeta oculta llamada `.ssh` en `~` (esto se combina con el [script para iniciar el agente al abrir bash](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/working-with-ssh-key-passphrases#auto-launching-ssh-agent-on-git-for-windows)), el nombre del archivo por defecto depende de tu algoritmo, en este caso seria `id_ed25519`. Al crear la clave te pedirá dónde guardarla, presionar enter para dejar por defecto. Al igual que preguntará por una contraseña (y otra vez para confirmarla), esto se puede dejar en blanco si se quiere.
 
 - **`-t <algoritmo>`**: TYPE — Define el tipo de algoritmo criptográfico para crear la clave. El algoritmo ed25519 es el más seguro, moderno y eficiente actualmente. Aunque hay algunos sistemas que no soportan este algoritmo
 - **`-C <email>`**: COMMENT — Agrega un comentario de texto dentro del archivo de la clave pública para identificar a qué cuenta o máquina le pertenece esa clave, comunmente va el mail
 - **`-b <bits>`**: En caso de no poder usar `ed25519` y tener que usar `rsa` esta opción define la longitud de la clave en bits, para asegurar la máxima seguridad usando `rsa` se debe hacer `-b 4096`
+---
+</details><br>
 
 
-</details>
+<br>
 
 
-
-
-
-
-
-
-
-
-**`df`**: DISK FREE — Muestra por pantalla la dirección y el disco donde está instalado Git, y cuánto espacio consume en nuestro disco (mostrando cuánto hay disponible y cuánto consume en porcentaje).
-
-
-
-
-<details>
-<summary>Opciones</summary>
-
-
-- **`-h`**: HUMAN-READABLE — Mostrará los datos de una forma más amigable para nosotros, con Terabytes, Gigabytes, Megabytes, etc. en lugar de solo Kilobytes
-
-
-</details>
-
-
-
-
-
-
-
-
-## Día a día con Git
-
+# 🧰 Utileria diaria
 
 
 **`git <subcomando>`**: Nombre del ejecutable "git.exe". Con éste podemos acceder a todas las funciones de git (es decir, seguirle con un `status`, `push`, `pull`, `commit`, etc.)
 
 
-
-
-
-
-
-
-
 **`git init`**: GIT INITIALIZE — Crea un repositorio Git (carpeta oculta llamada `.git`) en la carpeta que estemos parados (`pwd`)
-
-
-
-
-
-
-
 
 
 **`git clone <https-url/clave-ssh>`**: Permite descargar y copiar un repositorio remoto a tu espacio local (la carpeta con los archivos se crearán en la carpeta que estés parado)
 
 
-
-
-
-
-
-
-
-**`git remote`**: Por si solo, muestra los nombres de los remotos a los que estemos conectados (por ej. lo básico es que al ingresar este comando te imprima solo `origin`).
-
-
-
-
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git remote</code></b></summary>
 
+Por si solo, muestra los nombres de los remotos a los que estemos conectados (por ej. lo básico es que al ingresar este comando te imprima solo `origin`).
 
 - **`-v`**: Ejemplo de uso `git remote -v`. Nos muestra también los nombres de los remotos conectados, pero ahora le agrega las direcciones (URL o SSH) tanto para push como para pull
 - **`show <apodo>`**: Ejemplo de uso `git remote show origin`. Mostrará información mucho más detallada de los remotos conectados, incluye nombres, direcciones para fetch, pull, push; puntero HEAD y con qué rama remota está viculada cada rama local
@@ -166,33 +117,18 @@ _⚠️ OJO: cualquier `<cosa-entre-flechas>` es a modo de ejemplo y debe reempl
 - **`set-url <apodo> <nueva-URL/SSH>`**: Si cambiaste el nombre del proyecto en github, cambiaste de nombre de usuario o si querés pasar de HTTPS a SSH, entonces este comando te permite indicar la nueva dirección del remoto indicado (ya sea origin o el apodo que hayas elegido)
 - **`rename <apodo-original> <nuevo-apodo>`**: Si queres usar otro apodo que no sea "origin", primero tenes que indiar qué nombre queres modificar seguido del nuevo nombre para tu remoto. Por ej. `git remote rename origin github` (esto haria que tengamos que escribir "github" en lugar de "origin" para cualquier comando en el futuro)
 - **`remove <apodo>`** o **`rm`**: Ejemplo `git remote rm origin`. Como indica el nombre sirve para desvincular por completo un repo remoto (no borra archivos)
-
-
-</details>
-
-
-
-
-
-
-
-
-
-
-**`git pull`**: Descarga e integra de inmediato los cambios remotos a tu espacio local. Es técnicamente la combinación de `git fetch` + `git merge`. Recuerda que este comando requiere que hayas ingresado `git push -u origin <nombre-de-rama>` antes, o sino dará error ya que no sabe de dónde sacar los cambios (aunque si no querés usar `-u`, siempre podes especificar manualmente de dónde sacar los cambios con `git pull origin <nombre-de-rama>`).
-
-
+---
+</details><br>
 
 
 <details>
-<summary>Opciones</summary>
+<summary><b><code>git pull</code></b></summary>
 
+Descarga e integra de inmediato los cambios remotos a tu espacio local. Es técnicamente la combinación de `git fetch` + `git merge`. Recuerda que este comando requiere que hayas ingresado `git push -u origin <nombre-de-rama>` antes, o sino dará error ya que no sabe de dónde sacar los cambios (aunque si no querés usar `-u`, siempre podes especificar manualmente de dónde sacar los cambios con `git pull origin <nombre-de-rama>`).
 
 - **`origin <nombre-de-rama>`**: En sí "origin" es un alias/apodo, el cual apunta a la dirección URL/SSH del servidor remoto que hayamos clonado o ya pusheado antes (si no lo has hecho, ver info sobre `git remote` y su opción `add`), la rama se indica para que git sepa de qué rama hay que traer los cambios (cuidado, si por ejemplo queres traer una nueva rama remota llamada `second` a tu espacio local pero solo tenés creada la rama `main`, tenés que sí o sí crear la rama `second` primero de forma local, cambiarte a esa rama con `git switch` o `git checkout`, y _recien_ ahí hacer `git pull` o sino tus cambios se verán reflejados en la rama equivocada, que en este ejemplo seria `main`)
-
-
-</details>
-
+---
+</details><br>
 
 
 
