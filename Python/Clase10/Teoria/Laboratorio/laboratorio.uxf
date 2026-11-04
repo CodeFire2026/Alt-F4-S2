@@ -1,0 +1,78 @@
+<diagram program="umletino" version="15.1"><zoom_level>8</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>48</x><y>32</y><w>760</w><h>608</h></coordinates><panel_attributes></panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>48</x><y>8</y><w>120</w><h>24</h></coordinates><panel_attributes>mundo_pc</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>96</x><y>64</y><w>200</w><h>248</h></coordinates><panel_attributes>&lt;&lt;Computadora&gt;&gt;
+--
++contador_computadoras: int &lt;&lt;static&gt;&gt;
+-idComputadora: int
+-nombre: String
+-monitor: Monitor
+-teclado: Teclado
+-raton: Raton
+--
++__str__()
++getIdComputadora(): int
++getNombre(): String
++setNombre(): void
++getMonitor(): Monitor
++setMonitor(): void
++getTeclado(): Teclado
++setTeclado(): void
++getRaton(): Raton
++setRaton(): void
+--
+Responsabilidades
+--Crear objetos de tipo Computadora</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>104</x><y>408</y><w>168</w><h>184</h></coordinates><panel_attributes>&lt;&lt;Monitor&gt;&gt;
+--
++contadorMonitores: int &lt;&lt;static&gt;&gt;
+-idMonitor: int
+-marca: String
+-tamaño: String
+--
++__str__()
++getIdMonitor(): int
++getMarca(): String
++setMarca(): void
++getTamaño(): String
++setTamaño(): void
+--
+Responsabilidades
+--Crear objetos de tipo Monitor</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>72</y><w>272</w><h>144</h></coordinates><panel_attributes>&lt;&lt;Orden&gt;&gt;
+--
++contadorOrdenes: int &lt;&lt;static&gt;&gt;
+-idOrden: int
+-computadoras: List &lt;computadora&gt;
+--
++__str__()
++getIdOrden(): int
++getComputadoras(): List
++setComputadoras: void
+--
+Responsabilidades
+--Almacenar en una lista los objetos de tipo computadora</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>464</x><y>264</y><w>208</w><h>144</h></coordinates><panel_attributes>&lt;&lt;DispositivoEntrada&gt;&gt;
+--
+#tipoEntrada: String
+# marca: String
+--
++__str__()
++getTipoEntrada(): String
++setTipoEntrada(): void
++getMarca(): String
++setMarca(): void
+--
+Responsabilidades
+--Crear objetos de tipo DispositivoEntrada</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>336</x><y>472</y><w>208</w><h>96</h></coordinates><panel_attributes>&lt;&lt;Raton&gt;&gt;
+--
++contadorRatones: int &lt;&lt;static&gt;&gt;
+-idRaton: int
+--
++__str__()
+--
+Responsabilidades
+--Crear objetos de tipo Raton</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>584</x><y>472</y><w>208</w><h>96</h></coordinates><panel_attributes>&lt;&lt;Teclado&gt;&gt;
+--
++contadorTeclados: int &lt;&lt;static&gt;&gt;
+-idTeclado: int
+--
++__str__()
+--
+Responsabilidades
+--Crear objetos de tipo Teclado</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>184</x><y>304</y><w>24</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>120</y><w>160</w><h>32</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+</panel_attributes><additional_attributes>180;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>184</x><y>352</y><w>520</w><h>264</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;160;10;160;310;630;310</additional_attributes></element><element><id>Relation</id><coordinates><x>432</x><y>560</y><w>24</w><h>56</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>680</x><y>560</y><w>24</w><h>56</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>432</x><y>400</y><w>152</w><h>88</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>170;10;170;50;10;50;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>432</y><w>144</w><h>56</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;160;10;160;50</additional_attributes></element></diagram>
